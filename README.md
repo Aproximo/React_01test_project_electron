@@ -16,7 +16,7 @@ git clone https://github.com/Aproximo/React_01test_project_electron.git
 And then install dependencies.
 
 ```bash
-$ cd your-project-name
+$ cd React_01test_project_electron
 $ npm install
 
 
