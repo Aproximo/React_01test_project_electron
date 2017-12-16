@@ -13,7 +13,7 @@ First, clone the repo via git:
 git clone https://github.com/Aproximo/React_01test_project_electron.git
 ```
 
-And then install dependencies with yarn.
+And then install dependencies.
 
 ```bash
 $ cd your-project-name
