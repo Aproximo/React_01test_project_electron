@@ -1,6 +1,22 @@
-// @flow
-if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./configureStore.prod'); // eslint-disable-line global-require
-} else {
-  module.exports = require('./configureStore.dev'); // eslint-disable-line global-require
+import { createStore, applyMiddleware } from 'redux'
+import rootReducer from '../reducers'
+import { createLogger } from 'redux-logger'
+import thunk from 'redux-thunk'
+
+
+export default function configureStore(initialState) {
+  const logger = createLogger()
+  const store = createStore(
+    rootReducer,
+    initialState,
+    applyMiddleware(thunk, logger))
+
+  if (module.hot) {
+    module.hot.accept('../reducers', () => {
+      const nextRootReducer = require('../reducers')
+      store.replaceReducer(nextRootReducer)
+    })
+  }
+
+  return store
 }

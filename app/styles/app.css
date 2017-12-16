@@ -1,0 +1,21 @@
+
+span {
+  margin-right: 10px;
+  width: 60px;
+}
+
+.done {
+  background-color: green;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.label {
+  margin-right: 10px;
+}
+
+.form {
+  margin-left: 100px ;
+}
